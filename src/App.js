@@ -1,6 +1,6 @@
 import Nav from "./components/navBar";
 import Home from "./components/Home";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 import { Routes, Route } from "react-router";
 import { Login } from "./components/Auth/Login";
 import { Signup } from "./components/Auth/Signup";
@@ -17,7 +17,6 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
       </Routes>
-      <Footer />
     </>
   );
 }
