@@ -12,24 +12,77 @@ export const Signup = () => {
       [e.target.name]: e.target.value,
     });
   };
-  const handleSubmit = (e) => {
-    // if password don't match alert
-    // if password is less than 8 characters alert
-    // if password is more than 20 characters alert
-    // if email is not valid alert
+
+  const submitForm = (e) => {
+    if (form.password !== form.confirmPassword) {
+      alert("Passwords do not match");
+    } else if (
+      form.email === "" ||
+      form.password === "" ||
+      form.confirmPassword === "" ||
+      form.number === ""
+    ) {
+      alert("Please fill in all fields");
+    } else {
+      let formsubmit = {
+        email: form.email,
+        number: form.number,
+        password: form.password,
+      };
+      fetch("https://bikeapis.herokuapp.com/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formsubmit),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+        });
+    }
+  };
+  return (
+    <form onSubmit={submitForm}>
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        onChange={handleChange}
+      />
+      <input
+        type="number"
+        name="phone"
+        placeholder="Phone"
+        onChange={handleChange}
+      />
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        onChange={handleChange}
+      />
+
+      <input
+        type="password"
+        name="confirmPassword"
+        placeholder="Confirm Password"
+        onChange={handleChange}
+      />
+
+      <input type="submit" value="SignUP" />
+    </form>
+  );
+};
+// "email":"kapish@gmail.com",
+// "number": "9999999965",
+// "password": "123456"
+/*
+const handleSubmit = (e) => {
     if (form.password !== form.confirmPassword) {
       alert("Passwords don't match");
       return;
     }
-
-    // /register
-    /*https://bikeapis.herokuapp.com/regeister
-    {
-    "email":"kapish@gmail.com",
-    "number": "9999999965",
-    "password": "123456"
-}
-    */
     const sendForm = {
       email: form.email,
       number: form.number,
@@ -47,40 +100,28 @@ export const Signup = () => {
         console.log(data);
       });
   };
-  return (
-    <form>
-      {/* gmail */}
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        onChange={handleChange}
-      />
-      <input
-        type="number"
-        name="phone"
-        placeholder="Phone"
-        onChange={handleChange}
-      />
-      {/* password */}
-      <input
-        type="password"
-        name="password"
-        placeholder="Password"
-        onChange={handleChange}
-      />
-      {/* confirm password */}
-      <input
-        type="password"
-        name="confirmPassword"
-        placeholder="Confirm Password"
-        onChange={handleChange}
-      />
-      {/* submit */}
-      <button onClick={handleSubmit}>Signup</button>
-    </form>
-  );
+
+var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+
+var raw = JSON.stringify({
+  "email": "kapish@gmail.com",
+  "number": "9999999965",
+  "password": "123456"
+});
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
 };
-// "email":"kapish@gmail.com",
-// "number": "9999999965",
-// "password": "123456"
+
+fetch("http://localhost:2345/register", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+
+
+
+*/
