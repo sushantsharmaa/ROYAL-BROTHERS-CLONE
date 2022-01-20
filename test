@@ -54,16 +54,33 @@ export const Signup = () => {
   };
   return (
     <div className="sigin">
-      <h1 className="signin__headder">Rent . Ride . Explore</h1>
-      <div className="signin__card">
-        <div className="upper">
-          <div className="login">LOGIN</div>
-          <div className="signup">SIGN UP</div>
-        </div>
-      </div>
-      <form className="signin__form">
-        <input type="text" name="" placeholder="ts" id="" />
-      </form>
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        onChange={handleChange}
+      />
+      <input
+        type="number"
+        name="phone"
+        placeholder="Phone"
+        onChange={handleChange}
+      />
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        onChange={handleChange}
+      />
+
+      <input
+        type="password"
+        name="confirmPassword"
+        placeholder="Confirm Password"
+        onChange={handleChange}
+      />
+      <button onClick={submitForm}>Signup</button>
+      {/* <input onSubmit={submitForm} type="submit" value="Sign Up" /> */}
     </div>
   );
 };
