@@ -40,8 +40,28 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 500px;
   height: 100%;
   padding: 0px;
   margin: 0px;
+  border: 1px solid #f3f2f2;
+}
+input {
+  border: none;
+  border-bottom: 1px solid #fecc00;
+  width: 100%;
+  margin: 2%;
+  height: 46px;
+  border: #b62e2e;
+}
+button {
+  border: none;
+  border-radius: 3px;
+  background-color: #fecc00;
+  color: #fff;
+  width: 100%;
+  height: 46px;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 2%;
 }

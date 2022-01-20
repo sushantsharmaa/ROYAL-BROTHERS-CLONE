@@ -1,24 +1,21 @@
 import React from "react";
+
 import "./Signup.css";
+
 export const Signup = () => {
   const [form, setForm] = React.useState({
     email: "",
     password: "",
     confirmPassword: "",
   });
-  // const handleChange = (e) => {
-  //   setForm({
-  //     ...form,
-  //     [e.target.name]: e.target.value,
-  //   });
-  //   console.log(form);
-  // };
+
   const handleChange = ({ target: { name, value } }) => {
     setForm({ ...form, [name]: value });
     console.log(form);
   };
 
-  const submitForm = () => {
+  const submitForm = (e) => {
+    e.preventDefault();
     if (form.password !== form.confirmPassword) {
       alert("Passwords do not match");
     } else if (
@@ -33,7 +30,7 @@ export const Signup = () => {
       // now let's send this to the server
       var sendForm = {
         email: form.email,
-        number: 9856589568,
+        number: Number(form.number),
         password: form.password,
       };
       console.log(sendForm);
@@ -62,7 +59,33 @@ export const Signup = () => {
         </div>
       </div>
       <form className="signin__form">
-        <input type="text" name="" placeholder="ts" id="" />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          onChange={handleChange}
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          onChange={handleChange}
+        />
+        <input
+          type="password"
+          name="confirmPassword"
+          placeholder="Confirm Password"
+          onChange={handleChange}
+        />
+        <input
+          type="number"
+          name="number"
+          placeholder="Phone Number"
+          onChange={handleChange}
+        />
+        <button className="signin__button" onClick={submitForm}>
+          Sign Up
+        </button>
       </form>
     </div>
   );
