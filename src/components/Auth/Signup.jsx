@@ -6,14 +6,19 @@ export const Signup = () => {
     password: "",
     confirmPassword: "",
   });
-  const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
+  // const handleChange = (e) => {
+  //   setForm({
+  //     ...form,
+  //     [e.target.name]: e.target.value,
+  //   });
+  //   console.log(form);
+  // };
+  const handleChange = ({ target: { name, value } }) => {
+    setForm({ ...form, [name]: value });
+    console.log(form);
   };
 
-  const submitForm = (e) => {
+  const submitForm = () => {
     if (form.password !== form.confirmPassword) {
       alert("Passwords do not match");
     } else if (
@@ -24,32 +29,31 @@ export const Signup = () => {
     ) {
       alert("Please fill in all fields");
     } else {
+      // https://bikeapis.herokuapp.com/register
       // now let's send this to the server
-      var myHeaders = new Headers();
-      myHeaders.append("Content-Type", "application/json");
-
-      var raw = JSON.stringify({
+      var sendForm = {
         email: form.email,
-        number: form.number,
+        number: 9856589568,
         password: form.password,
-      });
-
-      var requestOptions = {
-        method: "POST",
-        headers: myHeaders,
-        body: raw,
-        redirect: "follow",
       };
+      console.log(sendForm);
+      fetch("https://bikeapis.herokuapp.com/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(sendForm),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+        });
 
-      fetch("https://bikeapis.herokuapp.com/register", requestOptions)
-        .then((response) => response.text())
-        .then((result) => console.log(result))
-        .catch((error) => console.log("error", error));
       // end call
     }
   };
   return (
-    <form onSubmit={submitForm}>
+    <div>
       <input
         type="email"
         name="email"
@@ -75,9 +79,9 @@ export const Signup = () => {
         placeholder="Confirm Password"
         onChange={handleChange}
       />
-
-      <input type="submit" value="SignUP" />
-    </form>
+      <button onClick={submitForm}>Signup</button>
+      {/* <input onSubmit={submitForm} type="submit" value="Sign Up" /> */}
+    </div>
   );
 };
 // "email":"kapish@gmail.com",
