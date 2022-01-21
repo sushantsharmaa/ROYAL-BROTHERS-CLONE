@@ -1,0 +1,67 @@
+.sigin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+.signin__headder {
+  font-size: 25px;
+  margin: 2%;
+  font-weight: bolder;
+}
+.signin__card {
+  border: 2px solid red;
+  border-top: 2px solid #f6f6f6;
+  border-right: 2px solid #dfdbdb;
+  border-bottom: 2px solid #f3f2f2;
+  border-left: 2px solid #f3f2f2;
+  border-radius: 3px;
+  width: 500px;
+}
+.upper {
+  display: flex;
+  width: 100%;
+  font-size: x-large;
+  font-weight: 800;
+  justify-content: space-around;
+  padding: 2%;
+  margin: auto;
+}
+.signup {
+  border-bottom: 7px solid #fecc00;
+  height: 100%;
+}
+.signin__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  border: 1px solid #f3f2f2;
+}
+input {
+  border: none;
+  border-bottom: 1px solid #fecc00;
+  width: 100%;
+  margin: 2%;
+  height: 46px;
+  border: #b62e2e;
+}
+button {
+  border: none;
+  border-radius: 3px;
+  background-color: #fecc00;
+  color: #fff;
+  width: 100%;
+  height: 46px;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 2%;
+}
