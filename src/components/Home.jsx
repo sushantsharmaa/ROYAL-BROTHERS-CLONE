@@ -2,12 +2,22 @@ import styles from "./css/home.module.css";
 import { Heading } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
 import Bar from "./bar";
-import { bikes } from "./data";
+// import { bikes } from "./data";
 import Caraousel1 from "./caraousel1";
 import Caraousel2 from "./caraousel2";
 import Footer from "./Footer";
+import { useState } from "react";
 
 export default function Home() {
+  const [bikes, setBikes] = useState([]);
+  useState(() => {
+    fetch("https://bikeapis.herokuapp.com/bikes")
+      .then((res) => res.json())
+      .then((data) => {
+        // take ony 4 data
+        setBikes(data.slice(0, 4));
+      });
+  });
   return (
     <div>
       <img
@@ -107,7 +117,7 @@ export default function Home() {
             <Heading fontSize="16px" fontWeight="semibold">
               {e.name}
             </Heading>
-            <img src={e.img} alt="images"></img>
+            <img src={e.image} alt="images"></img>
             <div className={styles.boxesline}></div>
             <Heading fontSize="20px" marginTop="10px" fontWeight="500">
               {e.price}
