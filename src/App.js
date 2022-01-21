@@ -1,4 +1,4 @@
-import Nav from "./components/navBar";
+import Nav from "./components/Navbar";
 import Home from "./components/Home";
 import Footer from "./components/Footer";
 import {Routes,Route} from "react-router"

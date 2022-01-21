@@ -22,7 +22,7 @@ export default function Home(){
                     <input type="date" name="start"  placeholder="Date"></input>
                     <input type="time" name="end"  className={styles.times} placeholder="Time"></input>
                 </div>
-                <Button width="300px" marginTop="50px" marginLeft= "15px" font-size="20px" backgroundColor="#FDB605" >Search</Button>
+                <Button width="300px" marginTop="50px" marginLeft= "15px" fontSize="20px" backgroundColor="#FDB605" >Search</Button>
                 <div className={styles.infod}>
                 </div>
             </div>
@@ -42,8 +42,8 @@ export default function Home(){
                 <Bar />
             </div>
             <div className={styles.box}>
-                {bikes.map((e)=>
-                <div className={styles.boxes}>
+                {bikes.map((e,i)=>
+                <div key={i} className={styles.boxes}>
                 <Heading fontSize="16px" fontWeight="semibold">{e.name}</Heading>
                 <img src={e.img} alt="images"></img>
                 <div className={styles.boxesline}></div>
