@@ -44,13 +44,14 @@ export const Signup = () => {
           .then((data) => {
             // setToken
             setToken("Bearer " + data.token);
+            localStorage.setItem("Royal_id", data._id);
+            localStorage.setItem("Royal_user", data.firstName);
             if (data.status === "success") {
               alert("Successfully registered");
             } else {
               if (data.message) {
                 alert(data.message);
               } else {
-                console.log(data.status);
                 alert("Weclome to Royal Family");
               }
             }
