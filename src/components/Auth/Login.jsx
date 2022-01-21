@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import React from "react";
 
 import "./Signup.css";
@@ -52,8 +53,13 @@ export const Login = () => {
       <h1 className="signin__headder">Rent . Ride . Explore</h1>
       <div className="signin__card">
         <div className="upper">
-          <div className="signup">LOGIN</div>
-          <div className="login">SIGN UP</div>
+          <div className="signup">
+            <Link to="/signin">LOGIN</Link>
+          </div>
+
+          <div className="login">
+            <Link to="/signin">SIGNUP</Link>
+          </div>
         </div>
       </div>
       <form className="signin__form">

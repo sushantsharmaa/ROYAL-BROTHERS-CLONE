@@ -1,5 +1,6 @@
 import React from "react";
 import "./Signup.css";
+import { Link } from "react-router-dom";
 
 export const Signup = () => {
   const [token, setToken] = React.useState("");
@@ -70,8 +71,12 @@ export const Signup = () => {
       <h1 className="signin__headder">Rent . Ride . Explore</h1>
       <div className="signin__card">
         <div className="upper">
-          <div className="login">LOGIN</div>
-          <div className="signup">SIGN UP</div>
+          <div className="login">
+            <Link to="/login">LOGIN</Link>
+          </div>
+          <div className="signup">
+            <Link to="/signin">SIGNUP</Link>
+          </div>
         </div>
       </div>
       <form className="signin__form">
