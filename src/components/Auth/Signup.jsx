@@ -3,15 +3,12 @@ import React from "react";
 import "./Signup.css";
 
 export const Signup = () => {
-  const [form, setForm] = React.useState({
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
+  const [token, setToken] = React.useState("");
+  const [form, setForm] = React.useState({});
 
   const handleChange = ({ target: { name, value } }) => {
     setForm({ ...form, [name]: value });
-    console.log(form);
+    // console.log(form);
   };
 
   const submitForm = (e) => {
@@ -43,12 +40,21 @@ export const Signup = () => {
       })
         .then((res) => res.json())
         .then((data) => {
+          // setToken
+          setToken("Bearer " + data.token);
+          alert("You have successfully registered");
           console.log(data);
         });
 
       // end call
     }
   };
+  React.useEffect(() => {
+    if (token) {
+      localStorage.setItem("token", token);
+    }
+  }, [token]);
+
   return (
     <div className="sigin">
       <h1 className="signin__headder">Rent . Ride . Explore</h1>
