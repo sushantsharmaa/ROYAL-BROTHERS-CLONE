@@ -7,7 +7,6 @@ export const Signup = () => {
 
   const handleChange = ({ target: { name, value } }) => {
     setForm({ ...form, [name]: value });
-    // console.log(form);
   };
 
   const submitForm = (e) => {
@@ -30,20 +29,32 @@ export const Signup = () => {
         password: form.password,
       };
       console.log(sendForm);
-      fetch("https://bikeapis.herokuapp.com/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(sendForm),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          // setToken
-          setToken("Bearer " + data.token);
-          alert("You have successfully registered");
-          console.log(data);
-        });
+      try {
+        fetch("https://bikeapis.herokuapp.com/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(sendForm),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            // setToken
+            setToken("Bearer " + data.token);
+            if (data.status === "success") {
+              alert("Successfully registered");
+            } else {
+              if (data.message) {
+                alert(data.message);
+              } else {
+                // console.log(data.status);
+                alert("You are already registered");
+              }
+            }
+          });
+      } catch (err) {
+        alert("Something went wrong");
+      }
 
       // end call
     }

@@ -30,12 +30,15 @@ export const Login = () => {
         .then((res) => res.json())
         .then((data) => {
           // setToken
-          setToken("Bearer " + data.token);
-          alert("You have successfully loggedin");
-          console.log(data);
+          if (data.status === "failed") {
+            alert("Invalid credentials");
+          } else if (data.token) {
+            setToken("Bearer " + data.token);
+            alert("You have successfully loggedin");
+          } else {
+            alert("You are not registered");
+          }
         });
-
-      // end call
     }
   };
   React.useEffect(() => {
