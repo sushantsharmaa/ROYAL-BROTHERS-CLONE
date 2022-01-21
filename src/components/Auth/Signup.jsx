@@ -26,6 +26,8 @@ export const Signup = () => {
       // now let's send this to the server
       var sendForm = {
         email: form.email,
+        firstName: form.firstName,
+        lastName: form.lastName,
         number: Number(form.number),
         password: form.password,
       };
@@ -48,8 +50,8 @@ export const Signup = () => {
               if (data.message) {
                 alert(data.message);
               } else {
-                // console.log(data.status);
-                alert("You are already registered");
+                console.log(data.status);
+                alert("Weclome to Royal Family");
               }
             }
           });
@@ -84,6 +86,18 @@ export const Signup = () => {
           type="email"
           name="email"
           placeholder="Email"
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          name="firstName"
+          placeholder="First Name"
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          name="lastName"
+          placeholder="Last Name"
           onChange={handleChange}
         />
         <input

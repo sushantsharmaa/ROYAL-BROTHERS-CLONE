@@ -17,6 +17,7 @@ export const Login = () => {
       alert("Please fill  all fields");
     } else {
       var sendForm = {
+        name: form.name,
         email: form.email,
         password: form.password,
       };
@@ -69,6 +70,7 @@ export const Login = () => {
           placeholder="Email"
           onChange={handleChange}
         />
+
         <input
           type="password"
           name="password"
