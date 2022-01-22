@@ -4,7 +4,6 @@ import { Button } from "@chakra-ui/react";
 import Bar from "./bar";
 import Caraousel1 from "./caraousel1";
 import Caraousel2 from "./caraousel2";
-import Footer from "./Footer";
 import { useState } from "react";
 
 export default function Home() {
@@ -157,7 +156,6 @@ export default function Home() {
           <Caraousel2 />
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

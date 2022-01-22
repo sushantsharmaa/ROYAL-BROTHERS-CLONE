@@ -2,6 +2,8 @@ import { Text, Button } from "@chakra-ui/react";
 import DrawerExample from "./Drawer";
 import { Link } from "react-router-dom";
 
+let location = JSON.parse(localStorage.getItem('loc'));
+
 export default function Nav() {
   return (
     <>
@@ -98,7 +100,7 @@ export default function Nav() {
             >
               <img
                 style={{ height: "80%", marginLeft: "10px", marginTop: "4px" }}
-                src="https://raw.githubusercontent.com/Kamleshfw11179/royalBrothersimages/main/Vector%20(2).png"
+                src="https://d36g7qg6pk2cm7.cloudfront.net/assets/icons/location-71f31ec08c06cf6736a1d12d6381dfc5786c237acdb690006334bd670e011904.png"
                 alt="location"
               ></img>
               <Text
@@ -106,7 +108,7 @@ export default function Nav() {
                 fontWeight="500"
                 marginTop="10px"
                 marginLeft="18px"
-              ></Text>
+              >{location}</Text>
               <img
                 style={{
                   height: "8px",
@@ -115,7 +117,7 @@ export default function Nav() {
                   zIndex: "-100",
                   marginLeft: "13%",
                 }}
-                src="https://raw.githubusercontent.com/Kamleshfw11179/royalBrothersimages/main/Vector%20(1).png"
+                src="https://d36g7qg6pk2cm7.cloudfront.net/assets/icons/arrow-down-3548e3549fe7bc5cef0875b187abda4f7ab493450041e3d6f0d54e1158798ec0.png"
                 alt="arrow"
               ></img>
             </div>
