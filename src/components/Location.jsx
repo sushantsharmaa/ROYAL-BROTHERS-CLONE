@@ -24,7 +24,7 @@ export default function Location({ state }) {
             <div className={styles.locations}>
                 <div className={styles.top}>
                     <div>
-                        <img src="https://raw.githubusercontent.com/Kamleshfw11179/royalBrothersimages/main/image%201.png" alt="logo"></img>
+                        <img src="https://www.kindpng.com/picc/m/600-6000026_royal-brothers-logo-hd-png-download.png" alt="logo"></img>
                     </div>
                     <div className={styles.locaBar}>
                     </div>
@@ -34,7 +34,7 @@ export default function Location({ state }) {
                 </div>
                 <div className={styles.search}>
                     <div className={styles.searchlogo}>
-                        <img src="https://raw.githubusercontent.com/Kamleshfw11179/royalBrothersimages/main/Vector%20(3).png" alt="search"></img>
+                        <img src="https://cdn0.iconfinder.com/data/icons/very-basic-2-android-l-lollipop-icon-pack/24/search-512.png" alt="search"></img>
                     </div>
                     <div className={styles.searchI}>
                         <input placeholder="Search or type city to select" />

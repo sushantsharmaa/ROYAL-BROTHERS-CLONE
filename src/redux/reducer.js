@@ -1,8 +1,5 @@
 import { GET_DATA } from "./actionTypes";
 
-
-
-
 const initState={
     bikes:[]
 }

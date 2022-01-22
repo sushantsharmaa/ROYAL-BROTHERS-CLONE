@@ -126,6 +126,3 @@ export const Signup = () => {
     </div>
   );
 };
-// "email":"kapish@gmail.com",
-// "number": "9999999965",
-// "password": "123456"

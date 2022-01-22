@@ -21,7 +21,6 @@ export const Login = () => {
         email: form.email,
         password: form.password,
       };
-      console.log(sendForm);
       fetch("https://bikeapis.herokuapp.com/login", {
         method: "POST",
         headers: {
@@ -51,8 +50,8 @@ export const Login = () => {
     }
   }, [token]);
 
-  return (
-    <div className="sigin">
+  return ( 
+    <div className="sigin login">
       <h1 className="signin__headder">Rent . Ride . Explore</h1>
       <div className="signin__card">
         <div className="upper">
@@ -87,6 +86,3 @@ export const Login = () => {
     </div>
   );
 };
-// "email":"kapish@gmail.com",
-// "number": "9999999965",
-// "password": "123456"

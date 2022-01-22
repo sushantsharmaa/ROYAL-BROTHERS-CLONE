@@ -1,10 +1,16 @@
 import { Text, Button } from "@chakra-ui/react";
 import DrawerExample from "./Drawer";
+import Location from "../components/Location";
 import { Link } from "react-router-dom";
 
 let location = JSON.parse(localStorage.getItem('loc'));
 
 export default function Nav() {
+
+  function handleClick() {
+    return <Location />
+  }
+
   return (
     <>
       <div
@@ -29,11 +35,11 @@ export default function Nav() {
           >
             <DrawerExample />
             <Link to="/">
-            <img
-              style={{ height: "50px" }}
-              src="https://www.kindpng.com/picc/m/600-6000026_royal-brothers-logo-hd-png-download.png"
-              alt="logo"
-            />
+              <img
+                style={{ height: "50px" }}
+                src="https://www.kindpng.com/picc/m/600-6000026_royal-brothers-logo-hd-png-download.png"
+                alt="logo"
+              />
             </Link>
           </div>
           <div
@@ -108,7 +114,9 @@ export default function Nav() {
                 fontWeight="500"
                 marginTop="10px"
                 marginLeft="18px"
-              >{location}</Text>
+                onClick={handleClick}
+              >{location}
+              </Text>
               <img
                 style={{
                   height: "8px",
