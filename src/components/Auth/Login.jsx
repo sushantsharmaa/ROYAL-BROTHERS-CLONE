@@ -36,8 +36,8 @@ export const Login = () => {
             alert("Invalid credentials");
           } else if (data.token) {
             setToken("Bearer " + data.token);
-            localStorage.setItem("Royal_id", data._id);
-            localStorage.setItem("Royal_user", data.firstName);
+            localStorage.setItem("Royal_id", data.user._id);
+            localStorage.setItem("Royal_user", data.user.firstName);
             alert("You have successfully loggedin");
           } else {
             alert("You are not registered");

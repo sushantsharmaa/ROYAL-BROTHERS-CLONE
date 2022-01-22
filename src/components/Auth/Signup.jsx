@@ -44,8 +44,8 @@ export const Signup = () => {
           .then((data) => {
             // setToken
             setToken("Bearer " + data.token);
-            localStorage.setItem("Royal_id", data._id);
-            localStorage.setItem("Royal_user", data.firstName);
+            localStorage.setItem("Royal_id", data.user._id);
+            localStorage.setItem("Royal_user", data.user.firstName);
             if (data.status === "success") {
               alert("Successfully registered");
             } else {
