@@ -1,5 +1,6 @@
 import Nav from "./components/Navbar";
 import Home from "./components/Home";
+import Footer from "./components/Footer";
 import { Routes, Route } from "react-router";
 import { Signup } from "./components/Auth/Signup";
 import { Login } from "./components/Auth/Login";
@@ -16,7 +17,9 @@ function App() {
         <Route path="/signin" element={<Signup />}></Route>
         <Route path="/login" element={<Login />}></Route>
       </Routes>
+      <Footer />
     </>
+    
   );
 }
 

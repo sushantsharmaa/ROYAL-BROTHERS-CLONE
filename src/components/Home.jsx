@@ -2,7 +2,6 @@ import styles from "./css/home.module.css";
 import { Heading } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
 import Bar from "./bar";
-// import { bikes } from "./data";
 import Caraousel1 from "./caraousel1";
 import Caraousel2 from "./caraousel2";
 import Footer from "./Footer";
@@ -19,7 +18,7 @@ export default function Home() {
       });
   });
   return (
-    <div>
+    <div>    
       <img
         src="https://d36g7qg6pk2cm7.cloudfront.net/assets/landing_page_web-986bff386c60dfaf5106b17c40f7c04228518a95dff9b04ccd88c81465cec0be.jpg"
         alt="homeI"

@@ -26,11 +26,13 @@ export default function Nav() {
             }}
           >
             <DrawerExample />
+            <Link to="/">
             <img
               style={{ height: "50px" }}
               src="https://www.kindpng.com/picc/m/600-6000026_royal-brothers-logo-hd-png-download.png"
               alt="logo"
             />
+            </Link>
           </div>
           <div
             style={{
