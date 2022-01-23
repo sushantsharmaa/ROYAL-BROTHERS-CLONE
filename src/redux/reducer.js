@@ -1,19 +1,19 @@
 import { GET_DATA } from "./actionTypes";
 
-const initState={
-    bikes:[]
-}
+const initState = {
+  bikes: [],
+};
 
-export const bikeReducer = (state=initState,{type,payload})=>{
-switch(type){
-    case(GET_DATA):{
-        return{
-            ...state,
-            bikes:[...payload]
-        }
+export const bikeReducer = (state = initState, { type, payload }) => {
+  switch (type) {
+    case GET_DATA: {
+      return {
+        ...state,
+        bikes: [...payload],
+      };
     }
-    default:{
-        return state
+    default: {
+      return state;
     }
-}
-}
+  }
+};
