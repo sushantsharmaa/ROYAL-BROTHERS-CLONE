@@ -14,41 +14,29 @@ export const Booking = () => {
   let time = JSON.parse(localStorage.getItem("time"));
   let ddate = JSON.parse(localStorage.getItem("ddate"));
   let dtime = JSON.parse(localStorage.getItem("dtime"));
- 
-  
+
+
   const dispatch = useDispatch();
   const { bikes } = useSelector((state) => state.bikes);
   // console.log('bikes:', bikes)
 
 
- let  x = Date.parse(date);
- 
- let y = Date.parse(ddate);
- 
+  let x = Date.parse(date);
 
+  let y = Date.parse(ddate);
 
+  let hour1 = time;
+  let hour2 = dtime;
+  // change into minutes
+  let hour1Min = hour1.split(":")[0];
+  let hour2Min = hour2.split(":")[0];
+  let ans = Math.abs(hour1Min - hour2Min);
+  if (hour1Min !== hour2Min && hour1.split(":")[1] === hour2.split(":")[1]) {
+    ans = ans + 1;
 
+  }
 
-let hour1 = time;
-let hour2 = dtime;
-// change into minutes
-let hour1Min = hour1.split(":")[0];
-let hour2Min = hour2.split(":")[0];
-let ans = Math.abs(hour1Min - hour2Min);
-if (hour1Min !== hour2Min && hour1.split(":")[1] === hour2.split(":")[1]) {
-  ans = ans + 1;
- 
-}
-
-
-
-let t = Math.abs((x - y)/3600000)+ans
-
-
-
-
-
-
+  let t = Math.abs((x - y) / 3600000) + ans
 
   useEffect(() => {
     dispatch(getData());
@@ -56,12 +44,12 @@ let t = Math.abs((x - y)/3600000)+ans
 
   return (
     <div className="main">
-    
+
       <div className="main-container">
         <div className="left-container">
           <h1>Filter</h1>
           <div className="filter">
-            <h2 fontSize="15px" fontWeight="bold">
+            <h2 fontSize="15px" marginTop="10px" fontWeight="bold">
               Select date and time
             </h2>
 
@@ -114,12 +102,12 @@ let t = Math.abs((x - y)/3600000)+ans
               <p>1 day 2 hours</p>
             </div>
             <Button
-              width="300px"
+              width="250px"
               marginTop="50px"
               marginLeft="15px"
               fontSize="20px"
               backgroundColor="#FDB605"
-              onClick={() => {}}
+              onClick={() => { }}
             >
               Apply Filter
             </Button>
@@ -166,7 +154,7 @@ let t = Math.abs((x - y)/3600000)+ans
                   </div>
                 </div>
                 <div className="bottom-div">
-                  <p>₹ {bike.hourPrice*t}</p>
+                  <p>₹ {bike.hourPrice * t}</p>
                   <Link to={`/checkout/${bike._id}`}>
                     <button
                       style={{
@@ -184,7 +172,7 @@ let t = Math.abs((x - y)/3600000)+ans
           </div>
         </div>
       </div>
-     
+
     </div>
   );
 };

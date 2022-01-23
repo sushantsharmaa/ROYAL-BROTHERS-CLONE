@@ -1,59 +1,64 @@
-.dispaly{
-    display: flex;
-    gap: 5%;
+.dispaly {
+  display: flex;
+  gap: 5%;
 }
-.display-left-item{
-    display: grid;
-    grid-template-columns: repeat(3, 33%);
-    /* gap:3%; */
+.display-left-item {
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
 }
-.margin-left-in-card{
-    margin-left: 10%;
-    display: flex;
+.margin-left-in-card {
+  margin-left: 8%;
+  display: flex;
 }
-/* .summary{
- margin-left: 7%; 
-} */
-.end-date{
-    float:right;
+
+.card {
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+
+.end-date {
+  float: right;
 }
 .garage-title {
-    clear: both;
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
+  clear: both;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
 }
-.display-price{
-    display: flex;
+.display-price {
+  display: flex;
+  height: 100px;
 }
 input {
-    border-top-style: hidden;
-    border-right-style: hidden;
-    border-left-style: hidden;
-    border-bottom-style: groove;
-    background-color: transparent;
-    border-bottom: 1px solid gray;
-  }
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  background-color: transparent;
+  border-bottom: 1px solid gray;
+}
 
-  input:focus {
-      border-style: none;
-  }
-  
-  .no-outline {
-    outline: none;
-  }
-  .img-width{
-      width: 100%;
-  }
-  .honda{
-      text-align: center;
-      font-size: 25px;
-      font-weight: 900;
-  }
-  .to{
-      margin-left: 30%;
-      margin-top: 15px;
-  }
-  .display-checkout{
-      display: flex;
-  }
+input:focus {
+  border-style: none;
+}
+
+.no-outline {
+  outline: none;
+}
+.img-width {
+  width: 100%;
+}
+.honda {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 900;
+}
+.to {
+  margin-left: 30%;
+  margin-top: 15px;
+}
+.display-checkout {
+  display: flex;
+  margin-top: 62px;
+  margin-bottom: 20px;
+}
