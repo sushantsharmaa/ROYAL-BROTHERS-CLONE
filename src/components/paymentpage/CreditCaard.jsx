@@ -90,9 +90,9 @@ export const CreditCard = ()=>{
   
      </div>
      <br/>
-     <Button  onClick={handleSubmit} style={{background:"#FFC600", color:"black", width:"30%", height:"25px", marginLeft:"5%"}} variant="contained" size="medium">
+     <button  onClick={handleSubmit} style={{background:"#FFC600", color:"black", width:"30%", height:"25px", marginLeft:"5%"}} variant="contained" size="medium">
      Make Payment
-  </Button>
+  </button>
   
   </div>
 

@@ -11,9 +11,9 @@ export const Zesto = ()=>{
           <br/>
           </div>
 
-          <Button  style={{background:"#FFC600", color:"black"}} variant="contained" size="medium">
+          <button  style={{background:"#FFC600", color:"black"}} variant="contained" size="medium">
           pay with Zestomoney
-          </Button>
+          </button>
 
     </div>
 

@@ -11,9 +11,9 @@ export const Paytm = ()=>{
           <br/>
           </div>
 
-          <Button  style={{background:"#FFC600", color:"black", marginLeft:"20%"}} variant="contained" size="medium">
+          <button  style={{background:"#FFC600", color:"black", marginLeft:"20%"}} variant="contained" size="medium">
           pay now
-          </Button>
+          </button>
 
     </div>
 

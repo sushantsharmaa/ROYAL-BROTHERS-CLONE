@@ -47,7 +47,8 @@ input {
   }
   .honda{
       text-align: center;
-      
+      font-size: 25px;
+      font-weight: 900;
   }
   .to{
       margin-left: 30%;

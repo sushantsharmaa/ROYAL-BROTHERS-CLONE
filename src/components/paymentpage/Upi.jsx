@@ -12,9 +12,9 @@ export const Upi = ()=>{
           <input style={{border:"1px solid gray"}} type="text" placeholder="yourname@bankname" />
           </div>
            <br/>
-          <Button  style={{background:"#FFC600", color:"black", marginLeft:"20%"}} variant="contained" size="medium">
+          <button  style={{background:"#FFC600", color:"black", marginLeft:"20%"}} variant="contained" size="medium">
            pay now
-          </Button>
+          </button>
 
     </div>
 

@@ -1,6 +1,4 @@
 import React, { useEffect } from "react"
-import { Button } from "@mui/material"
-import { borderBottom, display } from "@mui/system"
 import { useState } from "react"
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import { CreditCard } from "./CreditCaard"
@@ -22,6 +20,7 @@ export const Paymentpage = () =>{
     let {total} = useParams()
     
     const amount = +total
+    console.log('amount:', amount)
 
     return <div>
     

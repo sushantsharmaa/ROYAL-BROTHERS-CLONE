@@ -8,6 +8,7 @@ import { Login } from "./components/Auth/Login";
 import { useState } from "react";
 import { Booking } from "./components/booking/Booking";
 import { Checkout } from "./components/checkout/Checkout";
+import { Paymentpage } from "./components/paymentpage/paymentpage";
 
 
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/bookingPage" element={<Booking />}></Route>
         <Route path="/checkout/:id" element={<Checkout />}></Route>
+        <Route path="/checkout/paymentpage/:total" element={<Paymentpage />}></Route>
       </Routes>
     
       <Footer />

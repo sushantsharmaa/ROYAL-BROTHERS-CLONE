@@ -32,9 +32,9 @@ export const Netbanking = ()=>{
        <br/>
        <br/>
        <p style={{fontSize:"12px"}}><b>NOTE:</b>In the next step you will we redirected to your bank's website to verify yourself</p>
-       <Button  style={{background:"#FFC600", color:"black"}} variant="contained" size="medium">
+       <button  style={{background:"#FFC600", color:"black"}} variant="contained" size="medium">
           pay now
-          </Button>
+          </button>
 
        </div>
 
