@@ -5,9 +5,20 @@ import Bar from "./bar";
 import Caraousel1 from "./caraousel1";
 import Caraousel2 from "./caraousel2";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const [bikes, setBikes] = useState([]);
+  const [selectedDate, setSelectedDate] = useState("");
+  const [selectedTime, setSelectedTime] = useState("");
+  const [selectedDDate, setSelectedDDate] = useState("");
+  const [selectedDTime, setSelectedDTime] = useState("");
+
+  localStorage.setItem("date", JSON.stringify(selectedDate));
+  localStorage.setItem("time", JSON.stringify(selectedTime));
+  localStorage.setItem("ddate", JSON.stringify(selectedDDate));
+  localStorage.setItem("dtime", JSON.stringify(selectedDTime));
+
   useState(() => {
     fetch("https://bikeapis.herokuapp.com/bikes")
       .then((res) => res.json())
@@ -17,7 +28,7 @@ export default function Home() {
       });
   });
   return (
-    <div>    
+    <div>
       <img
         src="https://d36g7qg6pk2cm7.cloudfront.net/assets/landing_page_web-986bff386c60dfaf5106b17c40f7c04228518a95dff9b04ccd88c81465cec0be.jpg"
         alt="homeI"
@@ -28,23 +39,39 @@ export default function Home() {
         </Heading>
         <p className={styles.pickUp}>Pickup</p>
         <div className={styles.datTi}>
-          <input type="date" name="start" placeholder="Date"></input>
+          <input
+            type="date"
+            name="start"
+            placeholder="Date"
+            onChange={(date) => setSelectedDate(date.target.value)}
+            selected={selectedDate}
+          />
           <input
             type="time"
             name="end"
             className={styles.times}
             placeholder="Time"
-          ></input>
+            onChange={(date) => setSelectedTime(date.target.value)}
+            selected={selectedTime}
+          />
         </div>
         <p className={styles.dropOff}>Dropoff</p>
         <div className={styles.datTi}>
-          <input type="date" name="start" placeholder="Date"></input>
+          <input
+            type="date"
+            name="start"
+            placeholder="Date"
+            onChange={(date) => setSelectedDDate(date.target.value)}
+            selected={selectedDDate}
+          />
           <input
             type="time"
             name="end"
             className={styles.times}
             placeholder="Time"
-          ></input>
+            onChange={(date) => setSelectedDTime(date.target.value)}
+            selected={selectedDTime}
+          />
         </div>
         <Button
           width="300px"
@@ -53,7 +80,7 @@ export default function Home() {
           fontSize="20px"
           backgroundColor="#FDB605"
         >
-          Search
+          <Link to="/bookingPage">Search</Link>
         </Button>
         <div className={styles.infod}></div>
       </div>
