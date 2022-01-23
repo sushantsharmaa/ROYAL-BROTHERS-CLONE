@@ -1,19 +1,43 @@
-.text-alignment{
-   text-align: center; 
+
+.main{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
 }
+
 .credit-card{
  text-decoration: none;
- color: black;  
+ color: black;   
 }
+
+.hr{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.fw-bolder {
+    text-align: center;
+}
+
 .main-card{
+    display: flex;
+    flex-direction: row;
     width: 50rem;
-    margin-left: 3%;
     height: 500px;
 }
 .child-card{
-    width: 18rem;
-    height: 457px;
+    width: 30%;
+    text-align: center; 
+    border: 1px solid lightgrey;
 }
+
+.child-card-2{
+    width: 70%;
+    border: 1px solid lightgrey;
+}
+
 .secondry-card{
     margin-left: 2%;
     width: 33%;
@@ -24,23 +48,26 @@
     padding: 15px;
 }
 .credit-card-logo{
- display: flexbox;
+ display: flex;
+ margin: 0;
  padding: 5%;
+ padding-right: 0;
 }
 .credit-card-img{
-    width: 15%;
+   width: 15%;
    margin-left: 2%;
 }
 .credit-card-model{
-    padding: 5%;
+    margin: 0;
     margin-left: 5%;
-    width: 50%;
+    width: 75%;
 }
 .credit-card-inp{
     background: white;
     width: 97%;
+    height: 25px;
     border: none;
-     outline: none;
+    outline: none;
 }
 .month{
     width: 15%;
