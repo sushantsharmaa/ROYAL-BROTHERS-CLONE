@@ -8,13 +8,47 @@ import { useEffect } from "react";
 import { getData } from "../../redux/action";
 import { Link } from "react-router-dom";
 
+
 export const Booking = () => {
   let date = JSON.parse(localStorage.getItem("date"));
   let time = JSON.parse(localStorage.getItem("time"));
   let ddate = JSON.parse(localStorage.getItem("ddate"));
   let dtime = JSON.parse(localStorage.getItem("dtime"));
+ 
+  
   const dispatch = useDispatch();
   const { bikes } = useSelector((state) => state.bikes);
+  // console.log('bikes:', bikes)
+
+
+ let  x = Date.parse(date);
+ 
+ let y = Date.parse(ddate);
+ 
+
+
+
+
+let hour1 = time;
+let hour2 = dtime;
+// change into minutes
+let hour1Min = hour1.split(":")[0];
+let hour2Min = hour2.split(":")[0];
+let ans = Math.abs(hour1Min - hour2Min);
+if (hour1Min !== hour2Min && hour1.split(":")[1] === hour2.split(":")[1]) {
+  ans = ans + 1;
+ 
+}
+
+
+
+let t = Math.abs((x - y)/3600000)+ans
+
+
+
+
+
+
 
   useEffect(() => {
     dispatch(getData());
@@ -22,6 +56,7 @@ export const Booking = () => {
 
   return (
     <div className="main">
+    
       <div className="main-container">
         <div className="left-container">
           <h1>Filter</h1>
@@ -131,8 +166,8 @@ export const Booking = () => {
                   </div>
                 </div>
                 <div className="bottom-div">
-                  <p>₹ {bike.hourPrice}/hr</p>
-                  <Link to="#">
+                  <p>₹ {bike.hourPrice*t}</p>
+                  <Link to={`/checkout/${bike._id}`}>
                     <button
                       style={{
                         background: "rgb(254,210,80)",
@@ -149,6 +184,7 @@ export const Booking = () => {
           </div>
         </div>
       </div>
+     
     </div>
   );
 };

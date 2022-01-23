@@ -7,7 +7,10 @@ import { Signup } from "./components/Auth/Signup";
 import { Login } from "./components/Auth/Login";
 import { useState } from "react";
 import { Booking } from "./components/booking/Booking";
-// import
+import { Checkout } from "./components/checkout/Checkout";
+
+
+
 
 function App() {
   const [modal, setModal] = useState(true);
@@ -22,8 +25,11 @@ function App() {
         <Route path="/signin" element={<Signup />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/bookingPage" element={<Booking />}></Route>
+        <Route path="/checkout/:id" element={<Checkout />}></Route>
       </Routes>
+    
       <Footer />
+      
     </>
   );
 }
